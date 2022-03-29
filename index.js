@@ -198,7 +198,7 @@ class ServerlessPlugin {
       // https://stackoverflow.com/questions/19965844/lodash-difference-between-extend-assign-and-merge#comment57512843_19966511
       const mergedConfig = _.merge({}, defaultConfig, this.serverless.service.custom.signer, layers[layer].signer);
 
-      const packagePath = (layers[layer].package) ? (layers[layer].package.artifact) : (null)
+      const packagePath = layers[layer].artifact
 
       signerProcesses[layer] = {
         signerConfiguration: mergedConfig,
